@@ -3,4 +3,4 @@
 set -ex
 
 cip sudo apt-get update
-cip sudo apt-get install gplv2-dev
+cip sudo apt-get install libreadline-gplv2-dev
