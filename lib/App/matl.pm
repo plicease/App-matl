@@ -85,6 +85,8 @@ sub main
       else
       {
         say "Exception";
+        $error = "$error";
+        chomp $error;
         say $error;
       }
     }
