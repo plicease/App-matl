@@ -1,0 +1,57 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use 5.020;
+use lib::findbin '../lib'; # dev-only
+use App::matl;
+
+# PODNAME: matl
+# ABSTRACT: Perl mathy REPL
+# VERSION
+
+=head1 SYNOPSIS
+
+ % matl
+ matl> 1+2
+ 3
+ matl> [1,2,3]
+ -
+   - 1
+   - 2
+   - 3
+ matl> 
+      
+=head1 DESCRIPTION
+
+C<matl> is a little REPL that turns on some things that are handy for doing mathy things with
+arbitrary position integers or floats as appropriate.  The output is displayed using L<YAML>
+with C<$YAML::Stringify> turned on.  Press ^D (or whatever C<EOF> is on your platform) to quit.
+Input is C<eval>'d in the C<main> namespace.
+
+=over 4
+
+=item L<autodie> C<:all> is imported
+
+=item L<List::SomeUtils> C<:all> is imported
+
+=item The cpanm function is provided to install modules from the REPL.
+
+=back
+
+=head1 SEE ALSO
+
+=over 4
+
+=item L<Shell::Perl>
+
+=item L<perldebug>
+
+=item ... plus too many other REPLs to name in such a small space
+
+=back
+
+=cut
+
+my $rv = App::matl->main(@ARGV);
+exit $rv;
