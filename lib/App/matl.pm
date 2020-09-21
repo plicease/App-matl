@@ -93,7 +93,7 @@ sub main
     elsif(@result == 0)
     {
     }
-    elsif(is_single_basic @result)
+    elsif(is_single_basic(@result) && defined $result[0])
     {
       say $result[0];
     }
