@@ -3,6 +3,8 @@ Revision history for {{$dist->name}}},
 {{$NEXT}}
   - Remove extra line with exceptions.
   - Handle single undef gracefully.
+  - Set $_ to the previous line's first result
+  - Set @_ to the previous lines result
 
 0.01      2020-09-09 12:14:21 -0600
   - initial version

@@ -64,13 +64,16 @@ sub main
     $term->ReadHistory($history->stringify);
   }
 
+  my @result;
   my $line;
   while(defined($line = $term->readline('matl> ')))
   {
-    my @result = do {
+    @result = do {
       package main;
       no strict 'vars';
       use bignum;
+      local $_ = $result[0];
+      local @_ = @result;
       eval 'use autodie qw( :all ); ' . $line;  ## no critic (BuiltinFunctions::ProhibitStringyEval)
     };
     if(my $error = $@)
