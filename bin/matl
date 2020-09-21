@@ -25,9 +25,15 @@ use App::matl;
 =head1 DESCRIPTION
 
 C<matl> is a little REPL that turns on some things that are handy for doing mathy things with
-arbitrary position integers or floats as appropriate.  The output is displayed using L<YAML>
-with C<$YAML::Stringify> turned on.  Press ^D (or whatever C<EOF> is on your platform) to quit.
-Input is C<eval>'d in the C<main> namespace.
+arbitrary position integers or floats as appropriate.  For simple non reference defined values
+(strings and numbers) the result is printed out.  For more complicated data structures, output
+is displayed using L<YAML> with C<$YAML::Stringify> turned on.  Stringification is turned on
+so that big number classes L<Math::BigInt> and L<Math::BigFloat> are easy to read.  These
+classes are used by default via the L<bignum> pragma for integer and floating point values.
+
+The C<@_> is set to the previous line's result and C<$_> is set to the previous line first value.
+
+Press ^D (or whatever C<EOF> is on your platform) to quit.  Input is C<eval>'d in the C<main> namespace.
 
 =over 4
 

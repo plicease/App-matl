@@ -19,9 +19,15 @@ matl>
 # DESCRIPTION
 
 `matl` is a little REPL that turns on some things that are handy for doing mathy things with
-arbitrary position integers or floats as appropriate.  The output is displayed using [YAML](https://metacpan.org/pod/YAML)
-with `$YAML::Stringify` turned on.  Press ^D (or whatever `EOF` is on your platform) to quit.
-Input is `eval`'d in the `main` namespace.
+arbitrary position integers or floats as appropriate.  For simple non reference defined values
+(strings and numbers) the result is printed out.  For more complicated data structures, output
+is displayed using [YAML](https://metacpan.org/pod/YAML) with `$YAML::Stringify` turned on.  Stringification is turned on
+so that big number classes [Math::BigInt](https://metacpan.org/pod/Math::BigInt) and [Math::BigFloat](https://metacpan.org/pod/Math::BigFloat) are easy to read.  These
+classes are used by default via the [bignum](https://metacpan.org/pod/bignum) pragma for integer and floating point values.
+
+The `@_` is set to the previous line's result and `$_` is set to the previous line first value.
+
+Press ^D (or whatever `EOF` is on your platform) to quit.  Input is `eval`'d in the `main` namespace.
 
 - [autodie](https://metacpan.org/pod/autodie) `:all` is imported
 - [List::SomeUtils](https://metacpan.org/pod/List::SomeUtils) `:all` is imported
