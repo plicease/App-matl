@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}},
 
 {{$NEXT}}
+
+0.02      2020-09-21 02:48:19 -0600
   - Remove extra line with exceptions.
   - Handle single undef gracefully.
   - Set $_ to the previous line's first result
