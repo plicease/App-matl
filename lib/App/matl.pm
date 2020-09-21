@@ -39,6 +39,11 @@ package main {
     system 'cpanm', @_;
     return;
   }
+
+  sub _ ()
+  {
+    return $_;
+  }
 }
 
 sub is_single_basic

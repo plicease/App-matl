@@ -31,7 +31,8 @@ Press ^D (or whatever `EOF` is on your platform) to quit.  Input is `eval`'d in 
 
 - [autodie](https://metacpan.org/pod/autodie) `:all` is imported
 - [List::SomeUtils](https://metacpan.org/pod/List::SomeUtils) `:all` is imported
-- The cpanm function is provided to install modules from the REPL.
+- The `cpanm` function is provided to install modules from the REPL.
+- The `_` function returns the value of $\_, and thus is a shortcut for the previous line's value.
 
 # SEE ALSO
 

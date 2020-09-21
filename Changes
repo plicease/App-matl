@@ -5,6 +5,8 @@ Revision history for {{$dist->name}}},
   - Handle single undef gracefully.
   - Set $_ to the previous line's first result
   - Set @_ to the previous lines result
+  - The main::_ function returns $_ making `_` a shortcut
+    for $_.
 
 0.01      2020-09-09 12:14:21 -0600
   - initial version
