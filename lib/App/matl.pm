@@ -73,6 +73,7 @@ sub main
   my $line;
   while(defined($line = $term->readline('matl> ')))
   {
+    next if $line =~ /^\s*$/;
     @result = do {
       package main;
       no strict 'vars';
